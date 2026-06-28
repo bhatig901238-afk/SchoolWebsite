@@ -1,4 +1,42 @@
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+<!-- Top Bar -->
+
+<div class="top-bar">
+
+  <div class="container">
+
+    <div class="top-content">
+
+      <div>
+
+        <i class="fas fa-phone"></i>
+
+        +91 9876543210
+
+        <span class="mx-3"></span>
+
+        <i class="fas fa-envelope"></i>
+
+        info@school.com
+
+      </div>
+
+      <div>
+
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
 
   <div class="container">
 
@@ -6,49 +44,78 @@
 
       <img src="assets/images/logo/logo.png" width="55">
 
-      SHREE RAM INTER COLLEGE
+      ABC Public School
 
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
       <span class="navbar-toggler-icon"></span>
+
     </button>
 
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse" id="menu">
 
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
+      <ul class="navbar-nav ms-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Academics</a>
-        </li>
+          <a class="nav-link active" href="index.php">
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Faculty</a>
-        </li>
+            Home
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Gallery</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">Admission</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item ms-lg-3">
-          <a href="#" class="btn btn-primary rounded-pill px-4">
-            Admission Open
           </a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" href="pages/about.php">
+
+            About
+
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" href="#">
+
+            Academics
+
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" href="#">
+
+            Gallery
+
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" href="#">
+
+            Contact
+
+          </a>
+
+        </li>
+
+        <li class="nav-item ms-lg-3">
+
+          <a class="btn btn-primary rounded-pill px-4" href="#">
+
+            Admission Open
+
+          </a>
+
         </li>
 
       </ul>

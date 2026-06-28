@@ -1,7 +1,20 @@
+:root{
+
+--primary:#0D6EFD;
+--secondary:#003366;
+--gold:#F4B400;
+--white:#fff;
+--light:#F8F9FA;
+--dark:#212529;
+
+}
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 }
 
 body{
@@ -10,40 +23,16 @@ font-family:'Poppins',sans-serif;
 
 }
 
-.navbar{
+a{
 
-padding:15px 0;
-
-}
-
-.navbar-brand{
-
-font-size:26px;
-
-color:#003366 !important;
+text-decoration:none;
 
 }
 
-.nav-link{
+ul{
 
-font-weight:500;
-
-margin-left:20px;
-
-transition:.3s;
-
-}
-
-.nav-link:hover{
-
-color:#0d6efd !important;
-
-}
-
-.btn-primary{
-
-padding:10px 22px;
-
-font-weight:600;
+list-style:none;
+margin:0;
+padding:0;
 
 }
