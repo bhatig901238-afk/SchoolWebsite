@@ -44,7 +44,7 @@
 
       <img src="assets/images/logo/logo.png" width="55">
 
-      ABC Public School
+      SHREE RAM INTER COLLEGE
 
     </a>
 

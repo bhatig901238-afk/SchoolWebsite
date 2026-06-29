@@ -1,0 +1,420 @@
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+    position: relative;
+    background: url("../images/hero/hero.jpg") center center/cover no-repeat;
+    overflow: hidden;
+}
+
+.hero-overlay{
+    background: linear-gradient(
+        rgba(0,25,55,.75),
+        rgba(0,25,55,.78)
+    );
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.hero-content{
+    color:#fff;
+}
+
+.hero-subtitle{
+    display:inline-block;
+    color:#F4B400;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:68px;
+    font-weight:700;
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#F4B400;
+}
+
+.hero p{
+    color:#f3f3f3;
+    font-size:20px;
+    line-height:1.8;
+    max-width:620px;
+    margin-bottom:35px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    padding:15px 36px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.hero-buttons .btn-primary{
+    background:#0D6EFD;
+    border:none;
+}
+
+.hero-buttons .btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(13,110,253,.35);
+}
+
+.hero-buttons .btn-outline-light:hover{
+    color:#003366;
+    background:#fff;
+    transform:translateY(-5px);
+}
+
+/* ==========================
+   STATS CARD
+========================== */
+
+.stats-card{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.stat{
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:30px 15px;
+
+    transition:.35s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-8px);
+
+    background:#0D6EFD;
+
+}
+
+.stat h2{
+
+    color:#fff;
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.stat p{
+
+    color:#fff;
+
+    margin:0;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   FLOAT ANIMATION
+========================== */
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   SCROLL INDICATOR
+========================== */
+
+.scroll-down{
+
+position:absolute;
+
+bottom:120px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:5;
+
+animation:bounce 2s infinite;
+
+}
+
+.scroll-down a{
+
+color:#fff;
+
+font-size:34px;
+
+}
+
+@keyframes bounce{
+
+0%,20%,50%,80%,100%{
+
+transform:translateY(0);
+
+}
+
+40%{
+
+transform:translateY(-10px);
+
+}
+
+60%{
+
+transform:translateY(-5px);
+
+}
+
+}
+
+/* ==========================
+   WAVE
+========================== */
+
+.wave{
+
+position:absolute;
+
+bottom:-2px;
+
+left:0;
+
+width:100%;
+
+line-height:0;
+
+z-index:3;
+
+}
+
+.wave svg{
+
+display:block;
+
+width:100%;
+
+height:140px;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+.hero-overlay{
+
+padding:140px 0 180px;
+
+}
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    transition:background-image 1.2s ease-in-out;
+
+    overflow:hidden;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+margin:auto;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.stats-card{
+
+margin-top:50px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.stats-card{
+
+grid-template-columns:1fr;
+
+}
+
+.scroll-down{
+
+bottom:90px;
+
+}
+
+.wave svg{
+
+height:80px;
+
+}
+
+}
+
+.hero-buttons .btn-primary{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-buttons .btn-primary::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:120%;
+
+height:100%;
+
+background:rgba(255,255,255,.25);
+
+transform:skewX(-30deg);
+
+transition:.6s;
+
+}
+
+.hero-buttons .btn-primary:hover::before{
+
+left:130%;
+
+}
+
+.hero{
+
+    animation:heroZoom 18s linear infinite;
+
+}
+
+@keyframes heroZoom{
+
+0%{
+
+background-size:100%;
+
+}
+
+100%{
+
+background-size:110%;
+
+}
+
+}

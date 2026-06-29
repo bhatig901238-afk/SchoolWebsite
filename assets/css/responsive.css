@@ -1,0 +1,53 @@
+@media(max-width:992px){
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.stats-card{
+
+margin-top:40px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+
+font-size:35px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero-buttons .btn{
+
+display:block;
+
+width:100%;
+
+margin-bottom:15px;
+
+}
+
+.stats-card{
+
+grid-template-columns:1fr;
+
+}
+
+}
