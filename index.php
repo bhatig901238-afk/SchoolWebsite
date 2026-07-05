@@ -4,4 +4,8 @@
 <?php include("includes/about-home.php"); ?>
 <?php include("includes/achievements.php"); ?>
 <?php include("includes/why-choose.php"); ?>
+<?php include("includes/principal-message.php"); ?>
+<?php include("includes/gallery-preview.php"); ?>
+<?php include("includes/latest-news.php"); ?>
+<?php include("includes/footer-content.php"); ?>
 <?php include("includes/footer.php"); ?>
