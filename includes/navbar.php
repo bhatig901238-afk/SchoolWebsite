@@ -110,7 +110,7 @@
 
         <li class="nav-item ms-lg-3">
 
-          <a class="btn btn-primary rounded-pill px-4" href="#">
+          <a class="btn btn-primary rounded-pill px-4" href="pages/admission.php">
 
             Admission Open
 
