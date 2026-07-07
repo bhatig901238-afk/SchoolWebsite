@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 include("../config/config.php");
 
 if(!isset($_SESSION['admin'])){
@@ -30,188 +29,243 @@ $recentStudent = mysqli_fetch_assoc($recent);
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Admin Dashboard</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../assets/css/admin.css">
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
 
-<div class="container">
+        <div class="container">
 
-<span class="navbar-brand">
+            <a class="navbar-brand" href="dashboard.php">
 
-School Admin Panel
+                School Admin Panel
 
-</span>
+            </a>
 
-<a href="logout.php" class="btn btn-danger">
+            <a href="logout.php" class="btn btn-danger">
 
-Logout
+                Logout
 
-</a>
+            </a>
 
-</div>
+        </div>
 
-</nav>
+    </nav>
 
-<div class="container py-5">
+    <div class="container py-5">
 
-<h2 class="mb-4">
+        <h2 class="mb-4">
 
-Dashboard
+            Dashboard
 
-</h2>
+        </h2>
 
-<div class="row g-4">
+        <div class="row g-4">
 
-<div class="col-lg-4">
+            <div class="col-lg-4">
 
-<div class="dashboard-card bg-primary">
+                <div class="dashboard-card bg-primary text-white text-center p-4 rounded shadow">
 
-<i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users fa-2x mb-3"></i>
 
-<h2>
+                    <h2>
+                        <?php echo $totalAdmissions; ?>
+                    </h2>
 
-<?php echo $totalAdmissions; ?>
+                    <p class="mb-0">Total Admissions</p>
 
-</h2>
+                </div>
 
-<p>
+            </div>
 
-Total Admissions
+            <div class="col-lg-4">
 
-</p>
+                <div class="dashboard-card bg-success text-white text-center p-4 rounded shadow">
 
-</div>
+                    <i class="fa-solid fa-calendar-day fa-2x mb-3"></i>
 
-</div>
+                    <h2>
+                        <?php echo $todayAdmissions; ?>
+                    </h2>
 
-<div class="col-lg-4">
+                    <p class="mb-0">Today's Admissions</p>
 
-<div class="dashboard-card bg-success">
+                </div>
 
-<i class="fa-solid fa-calendar-day"></i>
+            </div>
 
-<h2>
+            <div class="col-lg-4">
 
-<?php echo $todayAdmissions; ?>
+                <div class="dashboard-card bg-warning text-dark text-center p-4 rounded shadow">
 
-</h2>
+                    <i class="fa-solid fa-graduation-cap fa-2x mb-3"></i>
 
-<p>
+                    <h2>7</h2>
 
-Today's Admissions
+                    <p class="mb-0">Classes (6-12)</p>
 
-</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="col-lg-4">
+        <!-- Recent Admission -->
 
-<div class="dashboard-card bg-warning">
+        <div class="card shadow mt-5">
 
-<i class="fa-solid fa-graduation-cap"></i>
+            <div class="card-header bg-primary text-white">
 
-<h2>
+                <h5 class="mb-0">
 
-7
+                    <i class="fa-solid fa-user-graduate"></i>
 
-</h2>
+                    Recent Admission
 
-<p>
+                </h5>
 
-Classes (6-12)
+            </div>
 
-</p>
+            <div class="card-body">
 
-</div>
+                <?php if($recentStudent){ ?>
 
-</div>
+                <div class="row align-items-center">
 
-</div>
+                    <div class="col-md-3 text-center">
 
-<div class="card mt-5 shadow">
+                        <?php if(!empty($recentStudent['photo'])){ ?>
 
-<div class="card-header bg-dark text-white">
+                        <img src="../uploads/photos/<?php echo $recentStudent['photo']; ?>"
+                            class="img-fluid rounded-circle border border-3 border-primary"
+                            style="width:170px;height:170px;object-fit:cover;">
 
-Recent Admission
+                        <?php }else{ ?>
 
-</div>
+                        <img src="https://via.placeholder.com/170" class="img-fluid rounded-circle">
 
-<div class="card-body">
+                        <?php } ?>
 
-<?php
+                    </div>
 
-if($recentStudent){
+                    <div class="col-md-9">
 
-?>
+                        <table class="table table-bordered">
 
-<h4>
+                            <tr>
 
-<?php echo $recentStudent['student_name']; ?>
+                                <th width="30%">Student Name</th>
 
-</h4>
+                                <td>
+                                    <?php echo $recentStudent['student_name']; ?>
+                                </td>
 
-<p>
+                            </tr>
 
-Father :
-<?php echo $recentStudent['father_name']; ?>
+                            <tr>
 
-</p>
+                                <th>Father Name</th>
 
-<p>
+                                <td>
+                                    <?php echo $recentStudent['father_name']; ?>
+                                </td>
 
-Class :
-<?php echo $recentStudent['class']; ?>
+                            </tr>
 
-</p>
+                            <tr>
 
-<p>
+                                <th>Class</th>
 
-Mobile :
-<?php echo $recentStudent['mobile']; ?>
+                                <td>
+                                    <?php echo $recentStudent['class']; ?>
+                                </td>
 
-</p>
+                            </tr>
 
-<?php
+                            <tr>
 
-}else{
+                                <th>Mobile</th>
 
-echo "No Admission Found.";
+                                <td>
+                                    <?php echo $recentStudent['mobile']; ?>
+                                </td>
 
-}
+                            </tr>
 
-?>
+                            <tr>
 
-</div>
+                                <th>Email</th>
 
-</div>
+                                <td>
+                                    <?php echo $recentStudent['email']; ?>
+                                </td>
 
-<div class="mt-4">
+                            </tr>
 
-<a href="admissions.php"
-class="btn btn-primary">
+                            <tr>
 
-Manage Admissions
+                                <th>Address</th>
 
-</a>
+                                <td>
+                                    <?php echo $recentStudent['address']; ?>
+                                </td>
 
-</div>
+                            </tr>
 
-</div>
+                        </table>
+
+                        <a href="student-profile.php?id=<?php echo $recentStudent['id']; ?>" class="btn btn-info">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            View Profile
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <?php } else { ?>
+
+                <div class="alert alert-warning mb-0">
+
+                    No Admission Found.
+
+                </div>
+
+                <?php } ?>
+
+            </div>
+
+        </div>
+
+        <div class="mt-4">
+
+            <a href="admissions.php" class="btn btn-primary">
+
+                <i class="fa-solid fa-list"></i>
+
+                Manage Admissions
+
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
 

@@ -10,18 +10,25 @@ if(isset($_POST['student_name'])){
     $mobile = mysqli_real_escape_string($conn,$_POST['mobile']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
     $address = mysqli_real_escape_string($conn,$_POST['address']);
+    $photo=$_FILES['photo']['name'];
+    $tmp=$_FILES['photo']['tmp_name'];
+    move_uploaded_file($tmp,"../uploads/photos/".$photo);
+    $document=$_FILES['document']['name'];
+    $tmp2=$_FILES['document']['tmp_name'];
+    move_uploaded_file($tmp2,"../uploads/documents/".$document);
 
     $sql = "INSERT INTO admissions
-    (student_name,father_name,class,mobile,email,address)
-
-    VALUES
-
-    ('$student_name',
+    (student_name,father_name,class,mobile,email,address,photo,document)
+    VALUES(
+    '$student_name',
     '$father_name',
     '$class',
     '$mobile',
     '$email',
-    '$address')";
+    '$address',
+    '$photo',
+    '$document'
+    )";
 
     if(mysqli_query($conn,$sql)){
 

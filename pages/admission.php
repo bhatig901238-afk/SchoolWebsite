@@ -43,7 +43,7 @@ include("../config/config.php");
 
           </div>
 
-          <form action="save-admission.php" method="POST">
+          <form action="save-admission.php" method="POST" enctype="multipart/form-data">
 
             <div class="row">
 
@@ -52,6 +52,28 @@ include("../config/config.php");
                 <label>Student Name</label>
 
                 <input type="text" name="student_name" class="form-control" required>
+
+              </div>
+              <div class="col-md-6 mb-3">
+
+                <label>
+
+                  Student Photo
+
+                </label>
+
+                <input type="file" name="photo" class="form-control" required>
+
+              </div>
+              <div class="col-md-6 mb-3">
+
+                <label>
+
+                  Transfer Certificate / Aadhaar
+
+                </label>
+
+                <input type="file" name="document" class="form-control" required>
 
               </div>
 

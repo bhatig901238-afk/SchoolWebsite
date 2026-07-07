@@ -214,7 +214,8 @@ while($row=mysqli_fetch_assoc($result)){
 
 <td><?php echo $row['id']; ?></td>
 
-<td><?php echo $row['student_name']; ?></td>
+<td><img
+src="../uploads/photos/<?php echo $row['photo'];?>" width="50" height="50" style="border-radius:50%;object-fit:cover;"> <br> <?php echo $row['student_name'];?></td>
 
 <td><?php echo $row['father_name']; ?></td>
 
